@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bates Media — Build. Launch. Scale.</title>
+  <meta name="description" content="Bates Media builds high-converting websites, shoots premium content, and wires up AI-powered automations that actually bring in leads.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    /* ── Reset & Base ─────────────────────────────── */
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #0a0a0a;
+      --surface: #111111;
+      --border: #1f1f1f;
+      --text: #f0f0f0;
+      --text-muted: #888888;
+      --accent: #4dd9e8;
+      --accent-dim: rgba(77, 217, 232, 0.08);
+      --font-heading: 'Barlow Condensed', sans-serif;
+      --font-body: 'Inter', sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-body);
+      font-weight: 300;
+      line-height: 1.6;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Utility ──────────────────────────────────── */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ── Animated Grid Background ─────────────────── */
+    .grid-bg {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(77, 217, 232, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(77, 217, 232, 0.03) 1px, transparent 1px);
+      background-size: 60px 60px;
+      mask-image: radial-gradient(ellipse 80% 60% at 50% 30%, black 20%, transparent 70%);
+      -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 30%, black 20%, transparent 70%);
+    }
+
+    /* ── Floating Orbs ────────────────────────────── */
+    .orb {
+      position: fixed;
+      border-radius: 50%;
+      filter: blur(100px);
+      pointer-events: none;
+      z-index: 0;
+      animation: float 20s ease-in-out infinite;
+    }
+
+    .orb--1 {
+      width: 500px; height: 500px;
+      background: rgba(77, 217, 232, 0.06);
+      top: -10%; left: -10%;
+      animation-delay: 0s;
+    }
+
+    .orb--2 {
+      width: 400px; height: 400px;
+      background: rgba(77, 217, 232, 0.04);
+      bottom: 10%; right: -5%;
+      animation-delay: -7s;
+    }
+
+    .orb--3 {
+      width: 300px; height: 300px;
+      background: rgba(100, 200, 255, 0.04);
+      top: 50%; left: 40%;
+      animation-delay: -14s;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      33% { transform: translate(40px, -30px) scale(1.05); }
+      66% { transform: translate(-20px, 20px) scale(0.95); }
+    }
+
+    /* ── Nav ──────────────────────────────────────── */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      padding: 20px 0;
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      background: rgba(10, 10, 10, 0.7);
+      border-bottom: 1px solid var(--border);
+      transition: padding 0.3s;
+    }
+
+    nav.scrolled { padding: 12px 0; }
+
+    nav .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 1.4rem;
+      letter-spacing: 2px;
+      color: var(--text);
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+
+    .logo span { color: var(--accent); }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+      align-items: center;
+    }
+
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 400;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--text); }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 28px;
+      font-family: var(--font-heading);
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-decoration: none;
+      border-radius: 6px;
+      border: none;
+      cursor: pointer;
+      transition: all 0.25s;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    .btn--primary {
+      background: var(--accent);
+      color: #0a0a0a;
+    }
+
+    .btn--primary:hover {
+      background: #7ae5f0;
+      transform: translateY(-1px);
+      box-shadow: 0 8px 30px rgba(77, 217, 232, 0.25);
+    }
+
+    .btn--outline {
+      background: transparent;
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+
+    .btn--outline:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .btn--sm {
+      padding: 10px 22px;
+      font-size: 0.82rem;
+    }
+
+    /* ── Hero ─────────────────────────────────────── */
+    .hero {
+      position: relative;
+      z-index: 1;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 140px 0 100px;
+    }
+
+    .hero__content {
+      max-width: 800px;
+    }
+
+    .hero__tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 16px;
+      background: var(--accent-dim);
+      border: 1px solid rgba(77, 217, 232, 0.15);
+      border-radius: 100px;
+      font-size: 0.78rem;
+      font-weight: 500;
+      color: var(--accent);
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      margin-bottom: 28px;
+      animation: fadeUp 0.8s ease both;
+    }
+
+    .hero__tag::before {
+      content: '';
+      width: 6px; height: 6px;
+      background: var(--accent);
+      border-radius: 50%;
+      animation: pulse-dot 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse-dot {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
+    }
+
+    .hero h1 {
+      font-family: var(--font-heading);
+      font-size: clamp(3rem, 7vw, 5.5rem);
+      font-weight: 800;
+      line-height: 1.05;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+      animation: fadeUp 0.8s ease 0.1s both;
+    }
+
+    .hero h1 .line { display: block; }
+
+    .hero h1 .highlight {
+      color: var(--accent);
+      position: relative;
+    }
+
+    .hero p {
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      max-width: 540px;
+      line-height: 1.7;
+      margin-bottom: 40px;
+      animation: fadeUp 0.8s ease 0.2s both;
+    }
+
+    .hero__actions {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      animation: fadeUp 0.8s ease 0.3s both;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ── Scroll indicator ─────────────────────────── */
+    .scroll-indicator {
+      position: absolute;
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      color: var(--text-muted);
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      animation: fadeUp 0.8s ease 0.6s both;
+    }
+
+    .scroll-line {
+      width: 1px;
+      height: 40px;
+      background: linear-gradient(to bottom, var(--accent), transparent);
+      animation: scroll-pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes scroll-pulse {
+      0%, 100% { opacity: 1; transform: scaleY(1); }
+      50% { opacity: 0.3; transform: scaleY(0.6); }
+    }
+
+    /* ── Section Shared ──────────────────────────── */
+    section {
+      position: relative;
+      z-index: 1;
+      padding: 120px 0;
+    }
+
+    .section-label {
+      font-family: var(--font-heading);
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      color: var(--accent);
+      margin-bottom: 16px;
+    }
+
+    .section-heading {
+      font-family: var(--font-heading);
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 800;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      line-height: 1.15;
+      margin-bottom: 20px;
+    }
+
+    .section-sub {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      max-width: 560px;
+      line-height: 1.7;
+    }
+
+    /* ── Reveal animation ─────────────────────────── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ── Process Section ──────────────────────────── */
+    .process { border-top: 1px solid var(--border); }
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--border);
+      margin-top: 64px;
+      border: 1px solid var(--border);
+    }
+
+    .process-video {
+      grid-column: span 2;
+      background: var(--bg);
+      position: relative;
+      overflow: hidden;
+      min-height: 280px;
+    }
+
+    .process-video video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .process-video::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at center, transparent 40%, var(--bg) 100%),
+        linear-gradient(to top, var(--bg) 0%, transparent 30%),
+        linear-gradient(to bottom, var(--bg) 0%, transparent 30%),
+        linear-gradient(to left, var(--bg) 0%, transparent 30%),
+        linear-gradient(to right, var(--bg) 0%, transparent 30%);
+      pointer-events: none;
+    }
+
+    .process-card {
+      background: var(--bg);
+      padding: 48px 36px;
+      position: relative;
+      overflow: hidden;
+      transition: background 0.3s;
+    }
+
+    .process-card:hover {
+      background: var(--surface);
+    }
+
+    .process-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 2px;
+      background: linear-gradient(90deg, var(--accent), transparent);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .process-card:hover::before { opacity: 1; }
+
+    .process-num {
+      font-family: var(--font-heading);
+      font-size: 3.5rem;
+      font-weight: 700;
+      color: rgba(77, 217, 232, 0.08);
+      line-height: 1;
+      margin-bottom: 20px;
+    }
+
+    .process-card h3 {
+      font-family: var(--font-heading);
+      font-size: 1.35rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .process-card p {
+      color: var(--text-muted);
+      font-size: 0.92rem;
+      line-height: 1.7;
+    }
+
+    /* ── Services Section ─────────────────────────── */
+    .services { border-top: 1px solid var(--border); }
+
+    .services-list {
+      margin-top: 64px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .service-item {
+      display: grid;
+      grid-template-columns: 1fr 2fr auto;
+      gap: 40px;
+      align-items: center;
+      padding: 36px 0;
+      border-top: 1px solid var(--border);
+      transition: all 0.3s;
+      cursor: default;
+    }
+
+    .service-item:last-child { border-bottom: 1px solid var(--border); }
+
+    .service-item:hover {
+      padding-left: 20px;
+    }
+
+    .service-item:hover .service-name {
+      color: var(--accent);
+    }
+
+    .service-name {
+      font-family: var(--font-heading);
+      font-size: 1.6rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      transition: color 0.3s;
+    }
+
+    .service-desc {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    .service-icon {
+      width: 48px;
+      height: 48px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      transition: border-color 0.3s;
+    }
+
+    .service-item:hover .service-icon {
+      border-color: var(--accent);
+    }
+
+    /* ── Stats Bar ────────────────────────────────── */
+    .stats {
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 80px 0;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 40px;
+      text-align: center;
+    }
+
+    .stat-num {
+      font-family: var(--font-heading);
+      font-size: clamp(2.5rem, 4vw, 3.5rem);
+      font-weight: 700;
+      letter-spacing: -1.5px;
+      color: var(--accent);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .stat-label {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+    }
+
+    /* ── CTA Section ──────────────────────────────── */
+    .cta {
+      text-align: center;
+      padding: 160px 0;
+    }
+
+    .cta .section-heading {
+      max-width: 700px;
+      margin: 0 auto 20px;
+    }
+
+    .cta .section-sub {
+      max-width: 500px;
+      margin: 0 auto 48px;
+    }
+
+    .cta-actions {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* ── Footer ───────────────────────────────────── */
+    footer {
+      position: relative;
+      z-index: 1;
+      border-top: 1px solid var(--border);
+      padding: 48px 0;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-copy {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+    }
+
+    .footer-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.82rem;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover { color: var(--text); }
+
+    /* ── Mobile Nav ───────────────────────────────── */
+    .mobile-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+    }
+
+    .mobile-toggle span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--text);
+      margin: 5px 0;
+      transition: all 0.3s;
+    }
+
+    /* ── Responsive ───────────────────────────────── */
+    @media (max-width: 900px) {
+      .service-item {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+
+      .service-icon { display: none; }
+
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 32px;
+      }
+    }
+
+    @media (max-width: 680px) {
+      .nav-links { display: none; }
+      .mobile-toggle { display: block; }
+
+      .hero { padding: 120px 0 80px; }
+      .hero h1 { letter-spacing: -1.5px; }
+
+      section { padding: 80px 0; }
+
+      .process-grid { grid-template-columns: 1fr; }
+      .process-video { grid-column: span 1; min-height: 220px; }
+
+      .stats-grid { grid-template-columns: 1fr 1fr; }
+
+      .footer-inner { flex-direction: column; gap: 20px; text-align: center; }
+    }
+
+    /* ── Cursor glow (desktop) ────────────────────── */
+    .cursor-glow {
+      position: fixed;
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(77, 217, 232, 0.06), transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+      transform: translate(-50%, -50%);
+      transition: opacity 0.3s;
+    }
+
+    /* ── Ticker tape ──────────────────────────────── */
+    .ticker {
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      overflow: hidden;
+      padding: 20px 0;
+      position: relative;
+      z-index: 1;
+    }
+
+    .ticker-track {
+      display: flex;
+      width: max-content;
+      animation: ticker 30s linear infinite;
+    }
+
+    .ticker-item {
+      font-family: var(--font-heading);
+      font-size: 1rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      white-space: nowrap;
+      padding: 0 40px;
+      color: var(--text-muted);
+    }
+
+    .ticker-item .dot {
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      background: var(--accent);
+      border-radius: 50%;
+      margin-left: 40px;
+      vertical-align: middle;
+    }
+
+    @keyframes ticker {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+  </style>
+</head>
+<body>
+  <div class="grid-bg"></div>
+  <div class="orb orb--1"></div>
+  <div class="orb orb--2"></div>
+  <div class="orb orb--3"></div>
+  <div class="cursor-glow" id="cursorGlow"></div>
+
+  <!-- ── Nav ──────────────────────────────────── -->
+  <nav id="nav">
+    <div class="container">
+      <a href="#" class="logo">BATES<span>.</span>MEDIA</a>
+      <ul class="nav-links">
+        <li><a href="#process">Process</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#cta"><span class="btn btn--primary btn--sm">Get Started</span></a></li>
+      </ul>
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ── Hero ─────────────────────────────────── -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero__content">
+        <div class="hero__tag">Now Accepting Clients</div>
+        <h1>
+          <span class="line">We build sites</span>
+          <span class="line">that <span class="highlight">actually</span></span>
+          <span class="line">bring in leads.</span>
+        </h1>
+        <p>Beautiful websites. Premium content. AI-powered automations. We handle every layer — from the first pixel to the first lead — so your business runs like a machine.</p>
+        <div class="hero__actions">
+          <a href="#cta" class="btn btn--primary">Book a Call <span>&rarr;</span></a>
+          <a href="#process" class="btn btn--outline">See the Process</a>
+        </div>
+      </div>
+    </div>
+    <div class="scroll-indicator">
+      <div class="scroll-line"></div>
+      Scroll
+    </div>
+  </section>
+
+  <!-- ── Ticker ───────────────────────────────── -->
+  <div class="ticker">
+    <div class="ticker-track">
+      <span class="ticker-item">Web Design <span class="dot"></span></span>
+      <span class="ticker-item">Video Production <span class="dot"></span></span>
+      <span class="ticker-item">AI Automations <span class="dot"></span></span>
+      <span class="ticker-item">CRM Systems <span class="dot"></span></span>
+      <span class="ticker-item">SEO Strategy <span class="dot"></span></span>
+      <span class="ticker-item">Meta Ads <span class="dot"></span></span>
+      <span class="ticker-item">Content Shoots <span class="dot"></span></span>
+      <span class="ticker-item">Lead Generation <span class="dot"></span></span>
+      <!-- Duplicate for seamless loop -->
+      <span class="ticker-item">Web Design <span class="dot"></span></span>
+      <span class="ticker-item">Video Production <span class="dot"></span></span>
+      <span class="ticker-item">AI Automations <span class="dot"></span></span>
+      <span class="ticker-item">CRM Systems <span class="dot"></span></span>
+      <span class="ticker-item">SEO Strategy <span class="dot"></span></span>
+      <span class="ticker-item">Meta Ads <span class="dot"></span></span>
+      <span class="ticker-item">Content Shoots <span class="dot"></span></span>
+      <span class="ticker-item">Lead Generation <span class="dot"></span></span>
+    </div>
+  </div>
+
+  <!-- ── Process ──────────────────────────────── -->
+  <section class="process" id="process">
+    <div class="container">
+      <div class="reveal">
+        <div class="section-label">The Process</div>
+        <h2 class="section-heading">From blueprint to<br>booked calendar.</h2>
+        <p class="section-sub">Four phases. One team. Every detail handled.</p>
+      </div>
+      <div class="process-grid reveal">
+        <div class="process-card">
+          <div class="process-num">01</div>
+          <h3>Design & Template</h3>
+          <p>We architect a high-converting site layout tailored to your brand — structured from the start to hold premium visuals and drive action.</p>
+        </div>
+        <div class="process-card">
+          <div class="process-num">02</div>
+          <h3>Content Shoot</h3>
+          <p>We map out every photo and video asset your site needs, then come on location to shoot it. No stock photos. No guesswork.</p>
+        </div>
+        <div class="process-card">
+          <div class="process-num">03</div>
+          <h3>AI & Automation</h3>
+          <p>We wire up the backend — CRM integrations, SEO optimization, lead capture flows, and intelligent automations that work while you sleep.</p>
+        </div>
+        <div class="process-card">
+          <div class="process-num">04</div>
+          <h3>Launch & Scale</h3>
+          <p>Once everything's dialed, we run monthly Meta ad campaigns to drive qualified traffic — and your site converts them into booked calls.</p>
+        </div>
+        <div class="process-video">
+          <video autoplay muted loop playsinline>
+            <source src="ocean.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Services ─────────────────────────────── -->
+  <section class="services" id="services">
+    <div class="container">
+      <div class="reveal">
+        <div class="section-label">Services</div>
+        <h2 class="section-heading">Everything under<br>one roof.</h2>
+        <p class="section-sub">No freelancer patchwork. One team owns every layer of your digital presence.</p>
+      </div>
+      <div class="services-list reveal">
+        <div class="service-item">
+          <div class="service-name">Website Design</div>
+          <div class="service-desc">Custom, conversion-focused sites built on clean templates designed to showcase your brand and capture leads from day one.</div>
+          <div class="service-icon">&loz;</div>
+        </div>
+        <div class="service-item">
+          <div class="service-name">Video & Photo</div>
+          <div class="service-desc">On-location content shoots — planned around your site's layout so every frame has a purpose and a place.</div>
+          <div class="service-icon">&#9654;</div>
+        </div>
+        <div class="service-item">
+          <div class="service-name">CRM Setup</div>
+          <div class="service-desc">Organize every lead, automate follow-ups, and never let a prospect fall through the cracks again.</div>
+          <div class="service-icon">&#9881;</div>
+        </div>
+        <div class="service-item">
+          <div class="service-name">AI Automations</div>
+          <div class="service-desc">Intelligent backend systems that handle SEO, lead routing, content scheduling, and more — without manual effort.</div>
+          <div class="service-icon">&#9889;</div>
+        </div>
+        <div class="service-item">
+          <div class="service-name">Meta Ads</div>
+          <div class="service-desc">Monthly paid campaigns on Facebook & Instagram that drive qualified traffic straight to your optimized site.</div>
+          <div class="service-icon">&#8599;</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Stats ────────────────────────────────── -->
+  <section class="stats">
+    <div class="container">
+      <div class="stats-grid reveal">
+        <div>
+          <div class="stat-num" data-target="100">0%</div>
+          <div class="stat-label">Custom Content</div>
+        </div>
+        <div>
+          <div class="stat-num">1</div>
+          <div class="stat-label">Team. Every Layer.</div>
+        </div>
+        <div>
+          <div class="stat-num">24/7</div>
+          <div class="stat-label">Automations Running</div>
+        </div>
+        <div>
+          <div class="stat-num">&infin;</div>
+          <div class="stat-label">Scalability</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CTA ──────────────────────────────────── -->
+  <section class="cta" id="cta">
+    <div class="container reveal">
+      <div class="section-label">Let's Talk</div>
+      <h2 class="section-heading">Ready to stop leaving<br>leads on the table?</h2>
+      <p class="section-sub">Book a free strategy call. We'll map out exactly what your business needs to start converting online.</p>
+      <div class="cta-actions">
+        <a href="#" class="btn btn--primary">Book a Free Call <span>&rarr;</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Footer ───────────────────────────────── -->
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-copy">&copy; 2026 Bates Media. All rights reserved.</div>
+        <ul class="footer-links">
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">LinkedIn</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // ── Nav scroll effect ──
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 40);
+    });
+
+    // ── Cursor glow ──
+    const glow = document.getElementById('cursorGlow');
+    if (window.matchMedia('(pointer: fine)').matches) {
+      document.addEventListener('mousemove', e => {
+        glow.style.left = e.clientX + 'px';
+        glow.style.top = e.clientY + 'px';
+      });
+    } else {
+      glow.style.opacity = '0';
+    }
+
+    // ── Reveal on scroll ──
+    const reveals = document.querySelectorAll('.reveal');
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+
+    reveals.forEach(el => revealObserver.observe(el));
+
+    // ── Smooth scroll for anchor links ──
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        const target = document.querySelector(link.getAttribute('href'));
+        if (target) target.scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+
+    // ── Mobile toggle (simple) ──
+    const toggle = document.getElementById('mobileToggle');
+    const navLinks = document.querySelector('.nav-links');
+    toggle.addEventListener('click', () => {
+      const open = navLinks.style.display === 'flex';
+      navLinks.style.display = open ? 'none' : 'flex';
+      navLinks.style.flexDirection = 'column';
+      navLinks.style.position = 'absolute';
+      navLinks.style.top = '100%';
+      navLinks.style.left = '0';
+      navLinks.style.right = '0';
+      navLinks.style.background = 'rgba(10,10,10,0.95)';
+      navLinks.style.padding = '24px';
+      navLinks.style.borderBottom = '1px solid var(--border)';
+    });
+  </script>
+</body>
+</html>
