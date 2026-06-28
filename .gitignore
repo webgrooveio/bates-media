@@ -1,4 +1,7 @@
-.claude/
+.claude/*
+!.claude/skills/
+!.claude/skills/**
+.claude/settings.local.json
 Screenshot*.png
 video spot.png
 .DS_Store
