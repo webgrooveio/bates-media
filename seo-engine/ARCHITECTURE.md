@@ -76,9 +76,18 @@ Three layers, used together:
    the existing Netlify deploy.
 3. **Claude scheduling** for our own hands-on review cadence between batches.
 
-## Open decisions (locked with the user)
+## Decisions (locked with the user 2026-06-28)
 
-- [ ] One repo for all clients vs. repo-per-client
-- [ ] Hosting of the engine: this `bates-media` repo vs. a dedicated repo
+- [x] **Engine lives in a dedicated repo.** Built portable inside `seo-engine/`
+      for now (this session is scoped to `bates-media`); lifts out via `git mv`
+      once the dedicated repo exists and is accessible.
+- [x] **Research = SEMrush API.** `research.*` targets the SEMrush API;
+      key stored as a secret (`SEMRUSH_API_KEY`).
 - [ ] WordPress auth method per client (Application Passwords recommended)
-- [ ] Research tool we actually have API access to (SEMrush vs Ahrefs vs both)
+- [ ] One client folder per business; multi-client orchestration TBD
+
+## Blocking on (from the user)
+- YouTube transcript → research/publishing SOP
+- First client: niche, services, target cities
+- WordPress site URL + Application Password
+- SEMrush API key (into secrets, not git)
