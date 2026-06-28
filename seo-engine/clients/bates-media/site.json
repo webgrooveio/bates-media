@@ -1,11 +1,26 @@
 {
   "business_name": "Bates Media",
-  "domain": "https://REPLACE-WITH-REAL-DOMAIN.com",
+  "domain": "https://batesmedia.io",
   "niche": "web design, content & AI automation agency",
   "business_type": "ProfessionalService",
   "author_default": "Jack Bates",
   "lang": "en",
-  "_TODO": "Confirm real domain + service-area city before publishing. target: static (this repo -> Netlify).",
+  "target": "static",
+  "deploy": "netlify",
+  "services": [
+    "Web Design",
+    "AI Automation",
+    "Lead Generation",
+    "Content & Video Production"
+  ],
+  "locations": [
+    "Jupiter",
+    "Tequesta",
+    "Juno Beach",
+    "Palm Beach Gardens",
+    "North Palm Beach"
+  ],
+  "locations_expansion": "Palm Beach County south toward Miami: West Palm Beach, Lake Worth, Boynton Beach, Delray Beach, Boca Raton, then Fort Lauderdale/Miami.",
   "theme": {
     "mode": "dark",
     "bg": "#0a0a0a",

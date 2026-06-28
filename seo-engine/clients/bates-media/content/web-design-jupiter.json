@@ -1,0 +1,20 @@
+{
+  "type": "service",
+  "slug": "web-design-jupiter",
+  "title": "Web Design in Jupiter, FL | Bates Media",
+  "description": "Custom, high-converting web design for Jupiter, FL businesses — fast, mobile-first sites built to turn local traffic into booked jobs. Free teardown.",
+  "primary_keyword": "web design jupiter",
+  "secondary_keywords": ["jupiter web design", "website design jupiter fl", "web designer jupiter florida", "small business website jupiter"],
+  "service": "Web Design",
+  "city": "Jupiter",
+  "author": "Jack Bates",
+  "date": "2026-06-28",
+  "answer": "Bates Media builds custom, mobile-first websites for Jupiter, FL businesses — designed around conversions, loaded with local SEO, and shipped fast. Most Jupiter small-business sites land between $2,500 and $8,000 depending on page count and automation.",
+  "body_html": "<h2>Web design built for Jupiter businesses</h2><p>From the shops along Indiantown Road to the contractors working Abacoa, Tequesta, and the Jupiter Inlet, local businesses here compete on one thing online: who shows up first and looks legit when they do. A pretty website that nobody finds — or one that loads slow on a phone in a parking lot — is just an expensive business card.</p><p>We build sites that do the actual job: rank locally, load fast, and turn visitors into calls and booked work.</p><h2>What's included</h2><ul><li><strong>Custom design</strong> — no cookie-cutter template; built to match your brand and your market.</li><li><strong>Mobile-first + fast</strong> — engineered for Core Web Vitals so Google and your customers both stay happy.</li><li><strong>Local SEO baked in</strong> — service-and-city pages, schema, and Google Business Profile alignment so you show up across Palm Beach County.</li><li><strong>Lead capture + automation</strong> — forms, click-to-call, and follow-up automations that chase the lead so you don't have to.</li></ul><h2>What it costs in Jupiter</h2><table><thead><tr><th>Project</th><th>Typical range</th></tr></thead><tbody><tr><td>Starter site (up to 5 pages)</td><td>$2,500 – $4,000</td></tr><tr><td>Local SEO site (service + city pages)</td><td>$4,000 – $8,000</td></tr><tr><td>Site + lead automation build</td><td>$8,000+</td></tr></tbody></table><h2>Serving Jupiter and beyond</h2><p>We work with businesses across Jupiter, Tequesta, Juno Beach, Palm Beach Gardens, and North Palm Beach — and extend down through Palm Beach County as you grow.</p>",
+  "faq": [
+    { "q": "How much does web design cost in Jupiter, FL?", "a": "Most Jupiter small-business sites run $2,500–$8,000. A simple brochure site sits at the low end; a local-SEO site with service-and-city pages and lead automation sits higher." },
+    { "q": "How long does a website take to build?", "a": "A starter site is usually 2–3 weeks. A larger local-SEO build with multiple service pages and automation runs 4–6 weeks depending on content and approvals." },
+    { "q": "Will my site rank in Google for Jupiter searches?", "a": "That's the point. We build dedicated service-and-city pages, proper schema, and Google Business Profile alignment so you compete for local Jupiter and Palm Beach County searches — not just exist online." }
+  ],
+  "cta": { "text": "Get a Free Website Teardown", "href": "/#contact" }
+}
