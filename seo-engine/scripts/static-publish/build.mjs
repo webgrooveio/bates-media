@@ -48,6 +48,27 @@ const site = readJSON(join(clientDir, 'site.json'));
 const base = trimSlash(args.base || site.domain || '');
 if (!base) { console.error('site.domain (or --base) is required'); process.exit(1); }
 
+// ---------- theme (site.json "theme" block; defaults = light) ----------
+const T = (() => {
+  const t = site.theme || {};
+  const dark = t.mode === 'dark';
+  const accent = t.accent || site.brand_color || (dark ? '#4dd9e8' : '#0a7d3b');
+  return {
+    dark,
+    bg: t.bg || (dark ? '#0a0a0a' : '#ffffff'),
+    surface: t.surface || (dark ? '#111111' : '#f7f7f7'),
+    border: t.border || (dark ? '#1f1f1f' : '#eeeeee'),
+    text: t.text || (dark ? '#f0f0f0' : '#1a1a1a'),
+    muted: t.muted || (dark ? '#8a8a8a' : '#666666'),
+    accent,
+    accentText: t.accent_text || (dark ? '#0a0a0a' : '#ffffff'),
+    headingFont: t.heading_font ? `'${t.heading_font}',` : '',
+    bodyFont: t.body_font ? `'${t.body_font}',` : '',
+    googleFonts: t.google_fonts || '',
+    radius: t.radius || '8px',
+  };
+})();
+
 const contentDir = join(clientDir, 'content');
 const pageFiles = existsSync(contentDir)
   ? readdirSync(contentDir).filter(f => f.endsWith('.json')).sort()
@@ -175,28 +196,33 @@ function renderPage(page) {
 <meta property="og:url" content="${esc(page.url)}">
 ${site.og_image ? `<meta property="og:image" content="${esc(base + site.og_image)}">` : ''}
 <meta name="robots" content="index,follow">
+${T.googleFonts ? `<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="${esc(T.googleFonts)}">` : ''}
 <script type="application/ld+json">
 ${jsonld(pageSchema(page))}
 </script>
 <style>
-:root{--brand:${site.brand_color || '#0a7d3b'}}
-*{box-sizing:border-box}body{margin:0;font:17px/1.7 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:#1a1a1a}
-.site-nav{display:flex;justify-content:space-between;align-items:center;padding:1rem 5vw;border-bottom:1px solid #eee;flex-wrap:wrap;gap:.5rem}
-.site-nav .brand{font-weight:700;text-decoration:none;color:var(--brand)}
-.site-nav a{margin-left:1rem;text-decoration:none;color:#444}
+:root{--bg:${T.bg};--surface:${T.surface};--border:${T.border};--text:${T.text};--muted:${T.muted};--accent:${T.accent};--accent-text:${T.accentText};--radius:${T.radius}}
+*{box-sizing:border-box}body{margin:0;font:17px/1.7 ${T.bodyFont}system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:var(--text);background:var(--bg)}
+h1,h2,h3{font-family:${T.headingFont}${T.bodyFont}system-ui,sans-serif;${T.dark ? 'letter-spacing:.2px;' : ''}line-height:1.15}
+.site-nav{display:flex;justify-content:space-between;align-items:center;padding:1rem 5vw;border-bottom:1px solid var(--border);flex-wrap:wrap;gap:.5rem}
+.site-nav .brand{font-weight:700;text-decoration:none;color:var(--accent);font-family:${T.headingFont}${T.bodyFont}system-ui,sans-serif;text-transform:uppercase;letter-spacing:1px}
+.site-nav a{margin-left:1rem;text-decoration:none;color:var(--muted)}
 main{max-width:760px;margin:0 auto;padding:2.5rem 5vw 4rem}
-h1{font-size:2.1rem;line-height:1.2;margin:0 0 1rem}
+h1{font-size:2.3rem;margin:0 0 1rem}
 h2{font-size:1.5rem;margin:2.2rem 0 .8rem}
-.answer{background:#f4faf6;border-left:4px solid var(--brand);padding:1rem 1.2rem;border-radius:6px}
-.meta{color:#666;font-size:.9rem;margin:0 0 2rem}
-.btn{display:inline-block;background:var(--brand);color:#fff;padding:.8rem 1.4rem;border-radius:8px;text-decoration:none;font-weight:600}
+table{width:100%;border-collapse:collapse;margin:1rem 0}
+th,td{text-align:left;padding:.55rem .6rem;border-bottom:1px solid var(--border)}
+th{color:var(--accent)}
+.answer{background:var(--surface);border-left:4px solid var(--accent);padding:1rem 1.2rem;border-radius:var(--radius)}
+.meta{color:var(--muted);font-size:.9rem;margin:0 0 2rem}
+.btn{display:inline-block;background:var(--accent);color:var(--accent-text);padding:.85rem 1.5rem;border-radius:var(--radius);text-decoration:none;font-weight:600}
 .cta{margin:2.5rem 0}
-.faq-section{margin-top:3rem;border-top:1px solid #eee;padding-top:1.5rem}
-.faq{border-bottom:1px solid #eee;padding:.6rem 0}
+.faq-section{margin-top:3rem;border-top:1px solid var(--border);padding-top:1.5rem}
+.faq{border-bottom:1px solid var(--border);padding:.6rem 0}
 .faq summary{cursor:pointer;font-weight:600}
-.faq div{padding:.6rem 0 .2rem;color:#333}
-footer{max-width:760px;margin:0 auto;padding:2rem 5vw;color:#777;font-size:.85rem;border-top:1px solid #eee}
-a{color:var(--brand)}
+.faq div{padding:.6rem 0 .2rem;color:var(--text)}
+footer{max-width:760px;margin:0 auto;padding:2rem 5vw;color:var(--muted);font-size:.85rem;border-top:1px solid var(--border)}
+a{color:var(--accent)}
 </style>
 </head>
 <body>

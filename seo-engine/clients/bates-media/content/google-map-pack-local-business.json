@@ -1,0 +1,18 @@
+{
+  "type": "blog",
+  "slug": "how-to-get-into-google-map-pack",
+  "title": "How Local Service Businesses Get Into Google's Map Pack (2026)",
+  "description": "The 3 ranking levers that actually move you into Google's local 3-pack — and how to automate the website and content work behind them.",
+  "primary_keyword": "how to get into google map pack",
+  "secondary_keywords": ["google 3-pack ranking", "local seo map pack", "rank in google maps", "local pack optimization"],
+  "author": "Jack Bates",
+  "date": "2026-06-28",
+  "answer": "To land in Google's Map Pack you need three things working together: a fully-optimized Google Business Profile, consistent reviews, and a website with dedicated service-and-city pages that prove local relevance. The first two are manual; the third is where automation does the heavy lifting.",
+  "body_html": "<p>The Map Pack — those top three businesses with the little map above the regular results — is where local customers actually click. Ranking there isn't luck, and it isn't a single trick. It's three levers pulled at the same time.</p><h2>The three levers that move the Map Pack</h2><table><thead><tr><th>Lever</th><th>What it is</th><th>Effort</th></tr></thead><tbody><tr><td>Google Business Profile</td><td>Categories, services, photos, hours, posts</td><td>Manual, ongoing</td></tr><tr><td>Reviews</td><td>Steady velocity + replies</td><td>Manual, ongoing</td></tr><tr><td>Website relevance</td><td>A page for every service in every city you serve</td><td>Automatable</td></tr></tbody></table><h2>Why the website is the unfair advantage</h2><p>Most local businesses have one generic \"Services\" page. Google can't tell whether you actually serve a given town, so it ranks the competitor who has a real page for it. The fix is a page per service per city — \"emergency electrician in Brandon,\" \"panel upgrades in Riverview,\" and so on. Building those by hand is brutal. Building them with a system is a weekend.</p><h2>How we automate it</h2><p>At Bates Media we build the site, generate the service-and-city pages with proper local content and schema, optimize every page for on-page and AI search, and wire up the reviews-and-leads automation behind it — so the three levers stay pulled without you touching a thing.</p>",
+  "faq": [
+    { "q": "How long does it take to rank in the Map Pack?", "a": "Usually 2–4 months for competitive local terms once the Google Business Profile, reviews, and service-area pages are all in place. Less competitive towns can move in weeks." },
+    { "q": "Do I need a separate page for every city?", "a": "For the services and towns you actually want to rank in, yes. Distinct, genuinely-local pages are how Google confirms you serve that area — but they must be unique and useful, not duplicated templates." },
+    { "q": "Can this be automated?", "a": "The website and content side, yes — research, page generation, and on-page/AI optimization all automate. Reviews and your Google Business Profile still need a human touch." }
+  ],
+  "cta": { "text": "Get a Free Local SEO Teardown", "href": "/#contact" }
+}

@@ -1,0 +1,28 @@
+{
+  "business_name": "Bates Media",
+  "domain": "https://REPLACE-WITH-REAL-DOMAIN.com",
+  "niche": "web design, content & AI automation agency",
+  "business_type": "ProfessionalService",
+  "author_default": "Jack Bates",
+  "lang": "en",
+  "_TODO": "Confirm real domain + service-area city before publishing. target: static (this repo -> Netlify).",
+  "theme": {
+    "mode": "dark",
+    "bg": "#0a0a0a",
+    "surface": "#111111",
+    "border": "#1f1f1f",
+    "text": "#f0f0f0",
+    "muted": "#888888",
+    "accent": "#4dd9e8",
+    "accent_text": "#0a0a0a",
+    "heading_font": "Barlow Condensed",
+    "body_font": "Inter",
+    "google_fonts": "https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800&family=Inter:wght@300;400;500&display=swap",
+    "radius": "8px"
+  },
+  "nav": [
+    { "label": "Process", "href": "/#process" },
+    { "label": "Services", "href": "/#services" },
+    { "label": "Contact", "href": "/#contact" }
+  ]
+}
