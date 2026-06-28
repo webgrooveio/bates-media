@@ -1,0 +1,40 @@
+# TEMPLATE — copy to a client site repo's .github/workflows/seo-deploy.yml
+# Builds the static SEO pages and deploys to Netlify. Runs on a schedule
+# (drip/replenish) and on demand. NOT active here — it's a template so it
+# never touches a live site without being intentionally installed.
+#
+# Required repo secrets: NETLIFY_AUTH_TOKEN, NETLIFY_SITE_ID
+# (SEMRUSH_API_KEY only if this workflow also runs the research step.)
+
+name: SEO build & deploy
+
+on:
+  workflow_dispatch: {}
+  schedule:
+    - cron: '0 13 * * 1'   # every Monday 13:00 UTC — replenish/drip batch
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      # Generate SEO-complete HTML + sitemap/robots/llms into ./public
+      - name: Build SEO pages
+        run: |
+          node seo-engine/scripts/static-publish/build.mjs \
+            --client seo-engine/clients/CLIENT_SLUG \
+            --out public
+
+      - name: Deploy to Netlify
+        uses: nwtgck/actions-netlify@v3
+        with:
+          publish-dir: public
+          production-deploy: true
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}

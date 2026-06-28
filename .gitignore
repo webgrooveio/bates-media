@@ -5,3 +5,6 @@
 Screenshot*.png
 video spot.png
 .DS_Store
+
+# SEO engine build artifacts
+seo-engine/clients/*/_preview/
