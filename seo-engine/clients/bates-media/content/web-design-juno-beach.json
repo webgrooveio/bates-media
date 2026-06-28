@@ -1,0 +1,20 @@
+{
+  "type": "service",
+  "slug": "web-design-juno-beach",
+  "title": "Web Design in Juno Beach, FL | Bates Media",
+  "description": "Custom web design for Juno Beach, FL businesses — fast, mobile-first sites with local SEO built in to turn beachside traffic into booked work.",
+  "primary_keyword": "web design juno beach",
+  "secondary_keywords": ["juno beach web design", "website design juno beach fl", "web designer juno beach", "small business website juno beach"],
+  "service": "Web Design",
+  "city": "Juno Beach",
+  "author": "Jack Bates",
+  "date": "2026-06-28",
+  "answer": "Bates Media builds custom, mobile-first websites for Juno Beach, FL businesses — designed around conversions, loaded with local SEO, and built to turn local traffic into booked work.",
+  "body_html": "<h2>Web design for Juno Beach businesses</h2><p>Juno Beach runs on a mix of locals and visitors — the foot traffic near the Juno Beach Pier and Loggerhead Marinelife Center, the service businesses keeping the oceanfront condos and homes running, the shops along US-1. A lot of those customers are searching on a phone, half a mile from your door. If you don't show up, the next business does.</p><p>We build fast, mobile-first sites that capture that local, high-intent search and turn it into a call or a booking.</p><h2>What's included</h2><ul><li><strong>Custom design</strong> — built to your brand, not a template.</li><li><strong>Mobile-first + fast</strong> — engineered for Core Web Vitals and the on-the-go searcher.</li><li><strong>Local SEO baked in</strong> — service-and-city pages, schema, and Google Business Profile alignment for the north county.</li><li><strong>Lead capture + automation</strong> — forms, click-to-call, and follow-up that keeps working after hours.</li></ul><h2>How we build it</h2><p>We start with your goals and the action you want visitors to take, design around it, and ship a search-ready site that scales as you add services and nearby cities.</p><h2>Serving Juno Beach and beyond</h2><p>We work with businesses across Juno Beach, Jupiter, Tequesta, Palm Beach Gardens, and North Palm Beach — and extend down through Palm Beach County as you grow.</p>",
+  "faq": [
+    { "q": "Can a website help me reach Juno Beach visitors, not just locals?", "a": "Yes — strong local SEO plus mobile-first speed means you capture both the residents and the visitors searching nearby on their phones for what you offer." },
+    { "q": "How long does a website take to build?", "a": "A focused site is usually 2–3 weeks; a larger local-SEO build with multiple service-and-city pages runs 4–6 weeks depending on content and approvals." },
+    { "q": "Will my site rank in Google for Juno Beach searches?", "a": "That's the goal — dedicated service-and-city pages and proper schema put you in the running for local Juno Beach and Palm Beach County searches." }
+  ],
+  "cta": { "text": "Get a Free Website Teardown", "href": "/#contact" }
+}

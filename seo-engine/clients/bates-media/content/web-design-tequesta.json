@@ -1,0 +1,20 @@
+{
+  "type": "service",
+  "slug": "web-design-tequesta",
+  "title": "Web Design in Tequesta, FL | Bates Media",
+  "description": "Custom web design for Tequesta, FL businesses — fast, mobile-first sites with local SEO built in to win customers across the Village and beyond.",
+  "primary_keyword": "web design tequesta",
+  "secondary_keywords": ["tequesta web design", "website design tequesta fl", "web designer tequesta", "small business website tequesta"],
+  "service": "Web Design",
+  "city": "Tequesta",
+  "author": "Jack Bates",
+  "date": "2026-06-28",
+  "answer": "Bates Media builds custom, mobile-first websites for Tequesta, FL businesses — designed around conversions, loaded with local SEO, and built to turn local traffic into booked work.",
+  "body_html": "<h2>Web design for the Village of Tequesta</h2><p>Tequesta is small, upscale, and word-of-mouth tight — which means your website is often the second impression after someone hears your name. The boutiques near Tequesta Drive, the trades working the riverfront homes along the Loxahatchee, the professionals serving Jupiter and Tequesta both — they all live or die online by looking credible the moment someone checks.</p><p>We build sites that match that bar: clean, fast, and built to convert the high-intent local searcher into a call.</p><h2>What's included</h2><ul><li><strong>Custom design</strong> — tailored to your brand, not a stock template.</li><li><strong>Mobile-first + fast</strong> — built for Core Web Vitals and the phone-in-hand customer.</li><li><strong>Local SEO baked in</strong> — service-and-city pages, schema, and Google Business Profile alignment so you rank across the north county.</li><li><strong>Lead capture + automation</strong> — forms, click-to-call, and follow-up that works while you do.</li></ul><h2>How we build it</h2><p>We start with your market and the action you want a visitor to take, design around it, and ship a fast, search-ready site that grows with you as you add services and neighboring cities.</p><h2>Serving Tequesta and the north county</h2><p>We work with businesses across Tequesta, Jupiter, Juno Beach, Palm Beach Gardens, and North Palm Beach — and extend through Palm Beach County as you grow.</p>",
+  "faq": [
+    { "q": "Do you work with small Tequesta businesses?", "a": "Absolutely — much of the Village runs on small, owner-led businesses, and that's exactly who benefits most from a fast, credible, locally-ranked site." },
+    { "q": "How long does a website take to build?", "a": "A focused site is usually 2–3 weeks; a larger local-SEO build with multiple service-and-city pages runs 4–6 weeks depending on content and approvals." },
+    { "q": "Will my site rank for Tequesta and Jupiter searches?", "a": "Yes — we build dedicated service-and-city pages and proper schema so you compete across the whole north Palm Beach County area, not just one town." }
+  ],
+  "cta": { "text": "Get a Free Website Teardown", "href": "/#contact" }
+}
