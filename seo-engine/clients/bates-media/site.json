@@ -21,6 +21,9 @@
     "North Palm Beach"
   ],
   "locations_expansion": "Palm Beach County south toward Miami: West Palm Beach, Lake Worth, Boynton Beach, Delray Beach, Boca Raton, then Fort Lauderdale/Miami.",
+  "content_rules": [
+    "No pricing, cost figures, or dollar amounts on any page — describe services and outcomes only."
+  ],
   "theme": {
     "mode": "dark",
     "bg": "#0a0a0a",
