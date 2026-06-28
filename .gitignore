@@ -8,3 +8,6 @@ video spot.png
 
 # SEO engine build artifacts
 seo-engine/clients/*/_preview/
+
+# secrets
+.env
