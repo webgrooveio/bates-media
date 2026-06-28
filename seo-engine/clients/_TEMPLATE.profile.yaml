@@ -1,0 +1,57 @@
+# Client profile — copy to clients/<slug>/profile.yaml and fill in.
+# Secrets are NEVER stored here — only the NAME of the GitHub/env secret.
+
+slug: example-pest          # folder + id
+business_name: "Example Pest Control"
+niche: pest control
+site_url: https://example.com
+
+# --- publishing target ---------------------------------------------------
+target: wordpress           # wordpress | static
+
+# wordpress target:
+wp_app_user: "admin"
+wp_app_password_ref: WP_APP_PASSWORD_EXAMPLEPEST   # GitHub secret NAME
+build_format: gutenberg     # custom_php | gutenberg | elementor
+
+# static target (delete the wordpress block above if using this):
+# repo: webgrooveio/example-site
+# deploy: netlify
+
+# --- business facts (NAP for schema + citations) -------------------------
+phone: "+1-555-000-0000"
+email: hello@example.com
+address: "123 Main St, Tampa, FL 33602"
+hours: "Mon-Fri 8-6"
+
+# --- the zipper axes -----------------------------------------------------
+services:
+  - termite control
+  - bed bug removal
+  - rodent control
+  - mosquito control
+locations:                  # municipalities / neighborhoods served
+  - Tampa
+  - Brandon
+  - Riverview
+  - Clearwater
+
+# --- research ------------------------------------------------------------
+semrush_api_key_ref: SEMRUSH_API_KEY
+competitors:
+  - competitor1.com
+  - competitor2.com
+
+# --- voice ---------------------------------------------------------------
+voice_sources:              # what to train the writing style on
+  - website
+  - emails
+brand_donts:
+  - "no guarantees we can't back up"
+
+# --- google business profile --------------------------------------------
+gbp_listing_url: ""
+gbp_locations: 1            # real physical locations only (see RISKS.md)
+
+# --- caps ----------------------------------------------------------------
+max_service_pages: 80       # hard ceiling 400

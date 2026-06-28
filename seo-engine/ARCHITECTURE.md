@@ -26,6 +26,20 @@ Their $2,000/mo + $1,200 setup offer is **programmatic local SEO**:
 The whole thing is AI-assisted content at scale + on-page/technical SEO + GBP +
 citations, dripped out on a schedule. That's exactly what we can build.
 
+## Two publishing targets (no WordPress lock-in)
+
+The pipeline is identical for every client; only the last-mile publish differs.
+`profile.yaml.target` routes it:
+- **`wordpress`** — push via WordPress REST API (Application Password). Bulk
+  `status=future` lets WP drip posts out itself.
+- **`static`** — generate clean HTML + schema + sitemap into the client's repo,
+  deploy to Netlify via GitHub Actions (the pattern already in
+  `.github/workflows/deploy.yml`). Used for Claude-built sites (Bates Media, the
+  construction client).
+
+Same research, clusters, voice, and on-page/technical/AI passes either way.
+Detail: `.claude/skills/local-seo-engine/references/publishing-adapters.md`.
+
 ## System components
 
 ```
