@@ -1,0 +1,20 @@
+{
+  "type": "service",
+  "slug": "ai-automation-juno-beach",
+  "title": "AI Automation for Juno Beach, FL Businesses | Bates Media",
+  "description": "AI automation for Juno Beach, FL businesses — automate lead follow-up, booking, and reviews so you capture more work without adding staff.",
+  "primary_keyword": "ai automation juno beach",
+  "secondary_keywords": ["business automation juno beach", "marketing automation juno beach fl", "automate lead follow up juno beach", "ai for small business juno beach"],
+  "service": "AI Automation",
+  "city": "Juno Beach",
+  "author": "Jack Bates",
+  "date": "2026-06-28",
+  "answer": "Bates Media builds AI automation for Juno Beach, FL businesses — systems that instantly follow up with leads, book appointments, and request reviews, so you capture more work without hiring more people.",
+  "body_html": "<h2>AI automation for Juno Beach businesses</h2><p>Juno Beach businesses juggle locals and a steady stream of visitors, and a lot of inquiries come in on a phone, on the move, expecting a fast answer. Whether it's a service company keeping the oceanfront condos running or a shop near US-1, the business that replies first usually wins the booking. Automation makes sure that's always you.</p><p>We build systems that respond instantly and handle the repetitive work in the background.</p><h2>What we automate</h2><ul><li><strong>Instant lead follow-up</strong> — every form and missed call gets an immediate text and email.</li><li><strong>Booking &amp; scheduling</strong> — self-service booking that fits a busy, on-the-go customer.</li><li><strong>Review generation</strong> — automatic review requests to build the reputation that ranks you locally.</li><li><strong>Repetitive ops</strong> — reminders, quotes, and follow-up sequences on autopilot.</li></ul><h2>How it works with your business</h2><p>We map where leads and time slip, connect automations to your current tools, and keep a human in the loop where it counts — so you capture more without adding overhead.</p><h2>Serving Juno Beach and beyond</h2><p>We work with businesses across Juno Beach, Jupiter, Tequesta, Palm Beach Gardens, and North Palm Beach — and extend down through Palm Beach County as you grow.</p>",
+  "faq": [
+    { "q": "How fast can automation respond to a new lead?", "a": "Within seconds — the moment someone submits a form or misses a call, they get an automatic text and email, which is often the difference between booking them and losing them." },
+    { "q": "Will this replace my team?", "a": "No — it handles the repetitive follow-up and scheduling so your team focuses on the work that needs a person." },
+    { "q": "Does it work with the tools I already use?", "a": "In most cases yes — we integrate with your existing CRM, calendar, and phone setup." }
+  ],
+  "cta": { "text": "Get a Free Automation Audit", "href": "/#contact" }
+}

@@ -1,0 +1,20 @@
+{
+  "type": "service",
+  "slug": "termite-control-tampa",
+  "title": "Termite Control in Tampa, FL | Same-Week Treatment",
+  "description": "Tampa termite control with same-week inspections, liquid + bait treatments, and a re-treatment guarantee. Get a free quote today.",
+  "primary_keyword": "termite control tampa",
+  "secondary_keywords": ["tampa termite treatment", "termite inspection tampa", "subterranean termite control tampa", "termite exterminator tampa fl"],
+  "service": "Termite Control",
+  "city": "Tampa",
+  "author": "Demo Pest Team",
+  "date": "2026-06-28",
+  "answer": "Termite control in Tampa typically runs $300–$900 for spot treatment and $1,200–$2,500 for whole-home liquid or bait systems — Tampa's heat and humidity make subterranean termites a year-round threat, so most homes need annual monitoring.",
+  "body_html": "<h2>Why Tampa homes are a termite magnet</h2><p>Warm, wet, and built on sandy soil — Tampa is basically a termite resort. Subterranean termites are active here all twelve months, and a mature colony can chew through six inches of 2x4 in about five months. By the time you see mud tubes on the foundation or hollow-sounding baseboards, the colony has usually been working for a while.</p><h2>How we treat it</h2><p>We start with a full inspection (interior, exterior, crawlspace, and the soil line), then match the treatment to what we find:</p><ul><li><strong>Liquid barrier (Termidor-class):</strong> a treated zone around the foundation that termites can't detect and carry back to the colony.</li><li><strong>Bait stations:</strong> in-ground stations for ongoing colony elimination and monitoring — ideal near slabs and landscaping.</li><li><strong>Spot/wood treatment:</strong> targeted for localized drywood activity.</li></ul><h2>What it costs in Tampa</h2><table><thead><tr><th>Treatment</th><th>Typical Tampa price</th></tr></thead><tbody><tr><td>Inspection</td><td>Free – $150</td></tr><tr><td>Spot treatment</td><td>$300 – $900</td></tr><tr><td>Whole-home liquid barrier</td><td>$1,200 – $2,500</td></tr><tr><td>Bait system + annual monitoring</td><td>$1,500 – $3,000 first year</td></tr></tbody></table><h2>Neighborhoods we cover</h2><p>We treat homes across Tampa including Hyde Park, Seminole Heights, Westchase, New Tampa, and South Tampa, with same-week scheduling in most ZIP codes.</p>",
+  "faq": [
+    { "q": "How much does termite control cost in Tampa?", "a": "Spot treatments run $300–$900, while whole-home liquid barriers or bait systems run $1,200–$2,500. Most quotes start with a free or low-cost inspection." },
+    { "q": "How often should Tampa homes be inspected for termites?", "a": "At least once a year. Tampa's climate keeps subterranean termites active year-round, so annual inspections (and continuous bait monitoring) catch colonies before they cause structural damage." },
+    { "q": "Do you guarantee the treatment?", "a": "Yes — our liquid and bait programs include a re-treatment guarantee for the covered period if activity returns." }
+  ],
+  "cta": { "text": "Get My Free Termite Inspection", "href": "/contact/" }
+}

@@ -1,0 +1,23 @@
+{
+  "business_name": "Demo Pest Control",
+  "domain": "https://demopest.example.com",
+  "niche": "pest control",
+  "business_type": "PestControlService",
+  "phone": "+1-813-555-0100",
+  "email": "hello@demopest.example.com",
+  "address": {
+    "street": "123 Main St",
+    "city": "Tampa",
+    "region": "FL",
+    "postal": "33602",
+    "country": "US"
+  },
+  "author_default": "Demo Pest Team",
+  "brand_color": "#0a7d3b",
+  "lang": "en",
+  "nav": [
+    { "label": "Services", "href": "/services/" },
+    { "label": "Service Areas", "href": "/areas/" },
+    { "label": "Contact", "href": "/contact/" }
+  ]
+}

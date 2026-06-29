@@ -1,0 +1,20 @@
+{
+  "type": "service",
+  "slug": "content-and-video-production-north-palm-beach",
+  "title": "Content & Video Production in North Palm Beach, FL | Bates Media",
+  "description": "Content and video production for North Palm Beach, FL businesses — premium photo and video that stops the scroll and powers your ads, social, and website.",
+  "primary_keyword": "content & video production north palm beach",
+  "secondary_keywords": ["video production north palm beach fl", "content creation north palm beach", "commercial video north palm beach", "social media content north palm beach"],
+  "service": "Content & Video Production",
+  "city": "North Palm Beach",
+  "author": "Jack Bates",
+  "date": "2026-06-28",
+  "answer": "Bates Media produces premium content and video for North Palm Beach, FL businesses — scroll-stopping photo and video built to power your ads, social media, and website, not just sit in a folder.",
+  "body_html": "<h2>Content &amp; video production for North Palm Beach businesses</h2><p>North Palm Beach runs on reputation — the Village, the waterfront, the country-club crowd along US-1 expect a certain standard. Your content is part of that reputation. Polished photo and video reinforce the trust that drives referrals here, while giving you modern social and ad assets most local competitors don't have.</p><p>Content that protects your reputation and grows your reach.</p><h2>What we produce</h2><ul><li><strong>Brand photo &amp; video</strong> — premium visuals for your website, ads, and profiles.</li><li><strong>Short-form social video</strong> — reels and shorts built for reach and engagement.</li><li><strong>Ad creative</strong> — content engineered to perform in paid campaigns.</li><li><strong>Product &amp; service shoots</strong> — show the work, the team, and the result.</li></ul><h2>Content with a job to do</h2><p>We plan every shoot around where it'll run and what it should achieve, so you get assets that reinforce your reputation and a library you can use for months.</p><h2>Serving North Palm Beach and beyond</h2><p>We work with businesses across North Palm Beach, Palm Beach Gardens, Juno Beach, Jupiter, and Tequesta — and extend down through Palm Beach County as you grow.</p>",
+  "faq": [
+    { "q": "How does content support a referral-driven business?", "a": "Polished, consistent content reinforces the reputation that earns referrals — and gives prospects who look you up a strong, modern impression that closes the loop." },
+    { "q": "Is the content built for ads or just for looks?", "a": "Performance first — we produce creative designed to convert on social and in paid campaigns, while matching the standard your market expects." },
+    { "q": "Do you travel for shoots?", "a": "Yes — we shoot across North Palm Beach and the wider Palm Beach County area, on location or at your business." }
+  ],
+  "cta": { "text": "Book a Content Shoot", "href": "/#contact" }
+}

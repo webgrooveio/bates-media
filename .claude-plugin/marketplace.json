@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-marketplace.json",
+  "name": "webgroove-seo",
+  "description": "Webgroove / Bates Media SEO automation plugins.",
+  "owner": { "name": "Jack Bates" },
+  "plugins": [
+    {
+      "name": "local-seo-engine",
+      "source": "./plugins/local-seo-engine",
+      "description": "Programmatic local SEO + GEO agent: SEMrush research, service×city pages, blogs, on-page/technical/AI optimization, publishing to WordPress or static/Netlify.",
+      "category": "productivity",
+      "keywords": ["seo", "local-seo", "geo", "wordpress", "content"]
+    }
+  ]
+}
