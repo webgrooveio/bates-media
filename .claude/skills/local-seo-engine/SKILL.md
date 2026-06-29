@@ -11,13 +11,21 @@ description: >-
 
 # Local SEO Engine
 
-The dispatch system for Stryker-style local SEO at scale, driven by the
-SEMrush + Claude workflow. Architecture in `seo-engine/ARCHITECTURE.md`;
-compliance in `seo-engine/RISKS.md`. The methodology is target-agnostic — same
-pipeline whether the client is on WordPress or static HTML/Netlify.
+A portable agent for local SEO at scale, driven by the SEMrush + Claude
+workflow. **Read `seo-engine/AGENT.md` first** — it is the operating contract
+(what to collect per project, the cross-project model, and the safety rules).
+Architecture in `seo-engine/ARCHITECTURE.md`; compliance in `seo-engine/RISKS.md`.
+The methodology is target-agnostic — same pipeline whether the client is on
+WordPress or static HTML/Netlify.
 
 ## Phases (read the matching reference before running each)
 
+0. **Onboard the project** — this runs first in every new session. Read or create
+   `seo-engine/clients/<slug>/profile`. Confirm which inputs and access you have
+   (site target, domain, services, locations, research access, publish access) per
+   `AGENT.md` → "What I need from you". **Confirm the publish target** (which
+   Netlify Site ID / WordPress install) before anything could go live. If access
+   is missing, ask for it — don't guess.
 1. **Load client** — `seo-engine/clients/<slug>/profile.yaml` (sets `target`,
    services, locations, voice, secrets refs).
 2. **Audit** → `references/research-sop.md` §1. SEMrush site audit, log baseline
@@ -49,8 +57,15 @@ WordPress clients also run plugin setup → `references/wordpress-setup.md`.
 - `/audit` — pull SEMrush audit and fix the site.
 
 ## Guardrails
+- **Confirm the deploy target before any production publish.** Never assume which
+  Netlify site / WordPress install a project points to. A full static deploy
+  REPLACES the live site — include every page that must be preserved (or deploy
+  additively), and verify the Site ID first. (Lesson: the "contractors page"
+  must never get wiped by a blind deploy.)
+- Never publish to a live site without an explicit go-ahead.
 - Legit GBP listings only; no thin/duplicate pages; no PBNs/paid links.
-- Human-verify facts (licensing, guarantees, pricing) before publish.
+- Human-verify facts (licensing, guarantees, claims) before publish. Respect
+  per-client content rules (e.g., no pricing) in `profile`/`site.json`.
 - Secrets (WP app passwords, SEMrush/ShortPixel keys) in env / GitHub secrets,
   never in git.
 - Cap zipper pages (≤400); start conservative (~50).
