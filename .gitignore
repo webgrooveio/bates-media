@@ -11,3 +11,6 @@ seo-engine/clients/*/_preview/
 
 # secrets
 .env
+
+# CI build output
+/public/

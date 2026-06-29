@@ -3,6 +3,7 @@ name: Deploy to Netlify
 on:
   push:
     branches: [main]
+  workflow_dispatch: {}
 
 jobs:
   deploy:
@@ -12,10 +13,26 @@ jobs:
         with:
           lfs: true
 
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      # Assemble the published site: homepage + assets, then generate the
+      # SEO Engine pages (service x city) + sitemap/robots/llms into ./public.
+      # Only this folder is deployed — the engine source is never published.
+      - name: Assemble site
+        run: |
+          mkdir -p public
+          cp index.html public/
+          cp ocean.mp4 public/
+          node seo-engine/scripts/static-publish/build.mjs \
+            --client seo-engine/clients/bates-media \
+            --out public
+
       - name: Deploy to Netlify
         uses: nwtgck/actions-netlify@v3
         with:
-          publish-dir: .
+          publish-dir: public
           production-deploy: true
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
