@@ -3,6 +3,27 @@
 Use this when you open a **client session** (separate from the engine workshop).
 The workshop session is only for editing the skill/scripts; client work runs here.
 
+## Using an EXISTING session (already on the Bates Media repo)
+You cannot repoint a running session to a different repo — the repo is fixed when
+the session starts. But the Bates Media website session is already on
+`webgrooveio/bates-media`, which is also where the engine lives, so you only need
+to switch branches. Paste this verification first (it won't lose work):
+
+```
+Run and show me the output:
+  git remote -v
+  git branch --show-current
+  git status -s
+If there are uncommitted changes, commit them on the current branch (or git stash)
+BEFORE switching. Then:
+  git fetch origin && git checkout claude/wordpress-seo-automation-9p1h9g && git pull
+Confirm the remote is webgrooveio/bates-media.
+```
+
+If the remote is NOT `webgrooveio/bates-media`, that session is on a different repo
+and can't see the engine directly — start a session on `webgrooveio/bates-media`
+instead (or we vendor the engine into that repo from the workshop).
+
 ## Pre-flight (do this once when the session starts)
 1. **Repo + branch:** open `webgrooveio/bates-media` on branch
    `claude/wordpress-seo-automation-9p1h9g` (this is where the engine, skill, and
