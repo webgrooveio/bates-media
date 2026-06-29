@@ -16,6 +16,9 @@ The workshop session is only for editing the skill/scripts; client work runs her
 ## Paste this prompt to start (Bates Media)
 
 ```
+First, switch to the engine branch:
+  git fetch origin && git checkout claude/wordpress-seo-automation-9p1h9g && git pull
+
 You are running the local-seo-engine skill from this repo. Read seo-engine/AGENT.md
 and .claude/skills/local-seo-engine/SKILL.md first, then follow the pipeline.
 
