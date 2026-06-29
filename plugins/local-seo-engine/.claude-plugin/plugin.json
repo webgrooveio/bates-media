@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
+  "name": "local-seo-engine",
+  "displayName": "Local SEO Engine",
+  "version": "0.1.0",
+  "description": "Programmatic local SEO + GEO agent for client sites. SEMrush keyword research, service×city ('zipper') pages, blog posts, on-page/technical/AI optimization, and publishing to WordPress (REST API) or static HTML on Netlify — same pipeline.",
+  "author": { "name": "Bates Media" },
+  "keywords": ["seo", "local-seo", "geo", "wordpress", "netlify", "content"],
+  "skills": "./skills/"
+}

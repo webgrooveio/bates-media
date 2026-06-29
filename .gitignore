@@ -1,13 +1,11 @@
-.claude/*
-!.claude/skills/
-!.claude/skills/**
 .claude/settings.local.json
 Screenshot*.png
 video spot.png
 .DS_Store
 
-# SEO engine build artifacts
-seo-engine/clients/*/_preview/
+# SEO engine build artifacts (per-client preview output)
+examples/*/_preview/
+clients/*/_preview/
 
 # secrets
 .env
